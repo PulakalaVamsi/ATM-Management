@@ -13,8 +13,8 @@ public class User implements Serializable {
     private long customerNum;
     private int pinNumber;
     private String mobileNumber;
-    private double checkingBal = 10000;
-    private double savingBal = 10000;
+    private double checkingBal = 1000;
+    private double savingBal = 1000;
 
     private List<String> transactionHistory = new ArrayList<>();
 
@@ -88,3 +88,4 @@ public class User implements Serializable {
         }
     }
 }
+
