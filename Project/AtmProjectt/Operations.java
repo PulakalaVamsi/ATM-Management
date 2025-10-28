@@ -85,7 +85,7 @@ public class Operations {
                 u.setAadhaarNumber(aadhaar);
                 data.put(accNum, u);
                 saveAccounts();
-                System.out.println("Account created with ₹10,000 Checking & Saving Balance!");
+                System.out.println("Account created with ₹1000 Checking & Saving Balance!");
             } else {
                 System.out.println("PIN mismatch or invalid.");
             }
@@ -245,6 +245,7 @@ public class Operations {
         }
     }
 }
+
 
 
 
