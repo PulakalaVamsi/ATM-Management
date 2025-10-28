@@ -1,4 +1,4 @@
-package AtmProjectt;
+package Atmprojectt;
 
 import java.io.*;
 import java.util.HashMap;
@@ -62,6 +62,12 @@ public class Operations {
         }
         System.out.print("Enter Mobile Number: ");
         String mob = sc.next();
+        System.out.print("Enter 12-digit Aadhaar Number: ");
+        String aadhaar = sc.next();
+        if (aadhaar.length() != 12 || !aadhaar.matches("\\d+")) {
+            System.out.println("Invalid Aadhaar number. Must be 12 digits.");
+            return;
+        }
         int otp = 1000 + rand.nextInt(9000);
         System.out.println("Your OTP: " + otp);
         System.out.print("Enter OTP: ");
@@ -76,9 +82,10 @@ public class Operations {
                 u.setCustomerNum(accNum);
                 u.setPinNum(pin1);
                 u.setMobileNumber(mob);
+                u.setAadhaarNumber(aadhaar);
                 data.put(accNum, u);
                 saveAccounts();
-                System.out.println("Account created with ₹1000 Checking & Saving Balance!");
+                System.out.println("Account created with ₹10,000 Checking & Saving Balance!");
             } else {
                 System.out.println("PIN mismatch or invalid.");
             }
@@ -97,6 +104,12 @@ public class Operations {
         System.out.print("Enter Registered Mobile Number: ");
         String mob = sc.next();
         User u = data.get(accNum);
+        System.out.print("Enter Aadhaar Number: ");
+        String aadhaar = sc.next();
+        if (!u.getAadhaarNumber().equals(aadhaar)) {
+            System.out.println("Aadhaar number mismatch.");
+            return;
+        }
         if (u.getMobileNumber().equals(mob)) {
             int otp = 1000 + rand.nextInt(9000);
             System.out.println("Your OTP: " + otp);
@@ -157,6 +170,7 @@ public class Operations {
                 case 1:
                     System.out.println("Account Number : " + u.getCustomerNum());
                     System.out.println("Mobile Number : " + u.getMobileNumber());
+                    System.out.println("Aadhaar Number : " + u.getAadhaarNumber());
                     System.out.println("Checking Account Balance : " + u.dFormat.format(u.getCheckingBalance()));
                     System.out.println("Saving Account Balance : " + u.dFormat.format(u.getSavingBalance()));
                     break;
@@ -231,5 +245,7 @@ public class Operations {
         }
     }
 }
+
+
 
 
