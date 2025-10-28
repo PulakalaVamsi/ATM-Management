@@ -1,4 +1,4 @@
-package AtmProjectt;
+package Atmprojectt;
 
 import java.io.Serializable;
 import java.text.DecimalFormat;
@@ -13,6 +13,7 @@ public class User implements Serializable {
     private long customerNum;
     private int pinNumber;
     private String mobileNumber;
+    private String aadhaarNumber;
     private double checkingBal = 1000;
     private double savingBal = 1000;
 
@@ -33,12 +34,21 @@ public class User implements Serializable {
     public int getPinNum() {
         return pinNumber;
     }
+
     public void setMobileNumber(String mobileNumber) {
         this.mobileNumber = mobileNumber;
     }
 
     public String getMobileNumber() {
         return mobileNumber;
+    }
+
+    public void setAadhaarNumber(String aadhaarNumber) {
+        this.aadhaarNumber = aadhaarNumber;
+    }
+
+    public String getAadhaarNumber() {
+        return aadhaarNumber;
     }
 
     public double getCheckingBalance() {
@@ -88,4 +98,3 @@ public class User implements Serializable {
         }
     }
 }
-
